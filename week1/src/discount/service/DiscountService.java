@@ -6,5 +6,6 @@ import member.domain.Member;
 public interface DiscountService {
     public int calculate(Member member, int price);
     public Discount createDiscount(Member member, int price);
-    public void printDiscount(Long memberId);
+    public Discount findMember(Long memberId);
+    // public void printDiscount(Long memberId);
 }

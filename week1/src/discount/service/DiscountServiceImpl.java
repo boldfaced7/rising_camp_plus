@@ -36,6 +36,12 @@ public class DiscountServiceImpl implements DiscountService{
         discountRepository.save(discount);
         return discount;
     }
+
+    @Override
+    public Discount findMember(Long memberId) {
+        return discountRepository.findByMemberId(memberId);
+    }
+    /*
     public void printDiscount(Long memberId) {
         int price = discountRepository.findByMemberId(memberId).getPrice();
         int discountingPrice = discountRepository.findByMemberId(memberId).getDiscountingPrice();
@@ -48,4 +54,5 @@ public class DiscountServiceImpl implements DiscountService{
             System.out.println("결제 금액: " + price);
         }
     }
+     */
 }

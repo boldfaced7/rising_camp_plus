@@ -50,7 +50,7 @@ public class Discount {
         if (discountPolicyName == "할인 결제 방식") {
             return "결제 금액: " + (price - discountingPrice);
         } else
-            return "보너스: " + discountingPrice +
+            return "보너스: " + discountingPrice + '\n' +
                     "결제 금액: " + price;
     }
 }
