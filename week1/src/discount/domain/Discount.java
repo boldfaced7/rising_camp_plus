@@ -4,11 +4,13 @@ public class Discount {
     private Long memberId;
     private int price;
     private int discountingPrice;
+    private String discountPolicyName;
 
-    public Discount(Long memberId, int price, int discountingPrice) {
+    public Discount(Long memberId, int price, int discountingPrice, String discountPolicyName) {
         this.memberId = memberId;
         this.price = price;
         this.discountingPrice = discountingPrice;
+        this.discountPolicyName = discountPolicyName;
     }
 
     public Long getMemberId() {
@@ -35,8 +37,20 @@ public class Discount {
         this.discountingPrice = discountingPrice;
     }
 
+    public String getDiscountPolicyName() {
+        return discountPolicyName;
+    }
+
+    public void setDiscountPolicyName(String discountPolicyName) {
+        this.discountPolicyName = discountPolicyName;
+    }
+
     @Override
     public String toString() {
-        return "Discount{}";
+        if (discountPolicyName == "할인 결제 방식") {
+            return "결제 금액: " + (price - discountingPrice);
+        } else
+            return "보너스: " + discountingPrice +
+                    "결제 금액: " + price;
     }
 }

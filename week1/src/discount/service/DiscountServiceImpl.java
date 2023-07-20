@@ -32,7 +32,7 @@ public class DiscountServiceImpl implements DiscountService{
     @Override
     public Discount createDiscount(Member member, int price) {
         int discountingPrice = calculate(member, price);
-        Discount discount = new Discount(member.getId(), price, discountingPrice);
+        Discount discount = new Discount(member.getId(), price, discountingPrice, member.getDiscountPolicyName());
         discountRepository.save(discount);
         return discount;
     }
@@ -46,6 +46,6 @@ public class DiscountServiceImpl implements DiscountService{
         else {
             System.out.println("보너스: " + discountingPrice);
             System.out.println("결제 금액: " + price);
-        };
+        }
     }
 }
