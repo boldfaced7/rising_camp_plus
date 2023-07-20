@@ -29,7 +29,7 @@ public class Main {
         List<Member> members = memberService.findMembers();
         for (Member member : members) {
             System.out.println(member);
-            System.out.println(discountService.findMember(member.getId()));
+            System.out.println(discountService.findDiscount(member.getId()));
             System.out.println("=================");
         }
     }

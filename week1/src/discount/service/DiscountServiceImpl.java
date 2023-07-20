@@ -38,7 +38,7 @@ public class DiscountServiceImpl implements DiscountService{
     }
 
     @Override
-    public Discount findMember(Long memberId) {
+    public Discount findDiscount(Long memberId) {
         return discountRepository.findByMemberId(memberId);
     }
     /*
