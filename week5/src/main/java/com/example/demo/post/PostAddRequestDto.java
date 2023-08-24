@@ -1,5 +1,6 @@
-package com.example.demo.Post;
+package com.example.demo.post;
 
+import com.example.demo.user.User;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,15 +10,19 @@ import lombok.NoArgsConstructor;
 public class PostAddRequestDto {
 
     private String content;
+    private String location;
 
     @Builder
-    public PostAddRequestDto(String content) {
+    public PostAddRequestDto(String content, String location) {
         this.content = content;
+        this.location = location;
     }
 
-    public Post toEntity() {
+    public Post toEntity(User user) {
         return Post.builder()
                 .content(content)
+                .location(location)
+                .user(user)
                 .build();
     }
 }
